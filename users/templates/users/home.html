@@ -1,0 +1,27 @@
+{% load static%}
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'users/css/home.css'  %}" type="text/css">
+  </head>
+  <body>
+
+    
+    
+    <div class="form">
+      <h1>Приветствую, {{ user.username|default:'гость' }}</h1>
+      <p> Добро пожаловать на сайт</p>
+        {% if user.is_authenticated %}
+          <div class="main-form">
+            <a href="#">На главную страницу</a>
+            <a href="{% url 'logout' %}">Выйти</a>
+          </div>
+        {% else %}
+          <div class="main-form">
+            <a href="{% url 'signup' %}">Зарегестрироваться</a>
+            <a href="{% url 'login' %}">Войти</a>
+          </div>
+        {% endif %}
+  </div>
+  </body>
+</html>

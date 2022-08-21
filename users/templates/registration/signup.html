@@ -1,0 +1,66 @@
+<!--/templates/register.html-->
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'users/css/signup.css' %}" type="text/css">
+    <title>Регистрация</title>
+</head>
+{% block content %}
+<!-- <h2>Регестрация</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Register">
+</form>
+
+<a href="{% url 'login' %}">Back to login</a>
+<a href="{% url 'home' %}">Back to Home</a> -->
+
+<body>
+    <form class="form" method="post">
+        <h1>Регистрация</h1>
+        <input type="hidden" name="csrfmiddlewaretoken" value="hRSvkgSkzkT72asfeKjzuPVtncQlUGnZdYY8Z8ebUBIUt69s98kWdHyYqPuT0w3t">{% csrf_token %}
+        
+        <div class="input-form">
+            <input type="text" placeholder="Логин" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username" >
+        </div>
+        <span class="helptext">
+            <ul>
+                <li>Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_.</li>
+            </ul>
+        </span>
+        
+        <div class="input-form">
+            <input type="password" placeholder="Новый пароль" name="password1" autocomplete="new-password" required="" id="id_password1" aria-autocomplete="list">
+        </div>
+        <span class="helptext">
+            <ul>
+                <li>Пароль не должен быть слишком похож на другую вашу личную информацию.</li>
+                <li>Ваш пароль должен содержать как минимум 8 символов.</li>
+                <li>Пароль не должен быть слишком простым и распространенным.</li>
+                <li>Пароль не может состоять только из цифр.</li>
+            </ul>
+        </span>
+        <div class="input-form">
+            <input type="password" placeholder="Подтверждение пароля" name="password2" autocomplete="new-password" required="" id="id_password2">
+        </div>
+        <span class="helptext">
+            <ul>
+                <li>Для подтверждения введите, пожалуйста, пароль ещё раз.</li>
+            </ul>
+        </span>
+
+        <div class="input-form">
+            <input type="submit" value="Зарегестрироваться">
+        </div>
+
+        <div class="input-form">
+            <a href="{% url 'login' %}">Авторизоваться</a>
+            <a>|</a>
+            <a href="{% url 'home' %}">Вернуться</a>
+        </div>
+    </form>
+    
+    </body>
+{% endblock %}
