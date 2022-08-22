@@ -10,16 +10,18 @@
     
     <div class="form">
       <h1>Приветствую, {{ user.username|default:'гость' }}</h1>
-      <p> Добро пожаловать на сайт</p>
+      <p> Добро пожаловать на проект по бурению</p>
         {% if user.is_authenticated %}
           <div class="main-form">
-            <a href="#">На главную страницу</a>
             <a href="{% url 'logout' %}">Выйти</a>
+            <br>
+            <a href="#">На главную страницу</a>
           </div>
         {% else %}
           <div class="main-form">
-            <a href="{% url 'signup' %}">Зарегестрироваться</a>
             <a href="{% url 'login' %}">Войти</a>
+            <br>
+            <a href="{% url 'signup' %}">Зарегистрироваться</a>
           </div>
         {% endif %}
   </div>

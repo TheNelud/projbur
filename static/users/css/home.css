@@ -12,7 +12,10 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
 }
+
+
 .form h1{
     margin: 30px 100px;
     padding: 0;
@@ -32,13 +35,20 @@ body{
     
 }
 .main-form a{
-    padding: 10px;
-    width: 100%;
-    color:#fff;
-    font-size: 20px;
-    background: none;
-    outline: none;
-    border: 1px solid #fff;
-    border-radius: 14px;
-    box-sizing: border-box;
+    position: relative;
+    background: #0fc3f5;
+    display: inline-block;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border-radius: 6px;
+    
+}
+.main-form a:hover{
+    background: #4442db;
 }
