@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import psycopg2
+
 
 from .models import *
 

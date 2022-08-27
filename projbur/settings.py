@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['89.108.98.227', 'projbur.ru', '127.0.0.1']
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'projbur_app.apps.ProjburAppConfig',
+    'maintenance_app.apps.MaintenanceAppConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -103,8 +104,21 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     },
+    'tor':{
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS' : {
+            'options' : '-c search_path=tor,public'
+        },
+        'NAME': 'digPlatfBur',
+        'USER': 'postgres',
+        'PASSWORD': 'cnx1plkvp',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
 }
-DATABASE_ROUTERS = ('projbur_app.db_router.MyDBRouter',)
+DATABASE_ROUTERS = ('projbur_app.db_router.MyDBRouter',
+                    'maintenance_app.db_router.MyDBRouter',
+                    )
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
