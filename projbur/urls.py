@@ -23,6 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('users.urls')),
+    path('index/', include('projbur_app.urls')),
+
+
+    # path('', include('users.urls', namespace='users')),
+    # path('index/', include('projbur_app.urls', namespace='projbur_app')),
+    
 ]
 
 if settings.DEBUG:

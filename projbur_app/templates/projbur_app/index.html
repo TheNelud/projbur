@@ -1,0 +1,61 @@
+{% load static%}
+<html>
+    <head>
+        <title>Главная страница</title>
+    </head>
+    <body>
+        <h1>Личный кабинет</h1>
+    
+        <table class="to-table" width="100%" cellspacing="0" cellpadding="4" border="1">
+            <caption> Техническое обслуживание </caption>
+            <tbody>
+                <tr>
+                    <th> №</th>
+                    <th> Номер ТО</th>
+                    <th> Вид работ</th>
+                    <th> Дата</th>
+                </tr>
+        {% for item in ref_equip%}
+                <tr>
+                    <td width="200">{{ item.desc_eq }}</td>
+                </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+
+        <table class="repair-table" width="100%" cellspacing="0" cellpadding="4" border="1">
+            <caption> Перечень МТР </caption>
+            <tbody>
+                <tr>
+                    <th> №</th>
+                    <th> Наименование МТР</th>
+                    <th> Кол-во</th>
+                </tr>
+        {% for item in ref_obj%}
+                <tr>
+                    <td width="200">{{ item.desc_bur }}</td>
+                </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+
+        <table class="repair-table" width="100%" cellspacing="0" cellpadding="4" border="1">
+            <caption> график ремонта </caption>
+            <tbody>
+                <tr>
+                    <th> №</th>
+                    <th> Система</th>
+                    <th> Дата ремонта</th>
+                    <th> Кол-во</th>
+                </tr>
+        {% for item in ref_sys%}
+                <tr>
+                    <tb></tb>
+                    <td width="200">{{ item.desc_sys }}</td>
+                </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+</html>
