@@ -1,0 +1,226 @@
+/* html,
+body {
+	height: 100%;
+} */
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	font-weight: 100;
+	background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(../img/background-burovay.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+	
+} 
+
+body h1{
+    margin: 30px 100px;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+} 
+
+.container-1 {
+	position: absolute;
+	width: 600px;
+   	background: linear-gradient(45deg, #49a09d, #5f2c82);
+   	border-radius: 10px;
+	margin:1% 0 0 5%;
+}
+
+.container-2 {
+	position: absolute;
+	width: 600px;
+   	background: linear-gradient(45deg, #49a09d, #5f2c82);
+   	border-radius: 10px;
+	margin:30% 0 0 5%;
+}
+
+.container-3 {
+	position: absolute;
+	width: 600px;
+   	background: linear-gradient(45deg, #49a09d, #5f2c82);
+   	border-radius: 10px;
+	margin:30% 0 0 55%;
+}
+
+
+
+.scroll-table-body {
+	height: 300px;
+	/* width: 600px; */
+	overflow-x: auto;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+.scroll-table table {
+	width:100%;
+	table-layout: fixed;
+	border: none;
+}
+.scroll-table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	/* background: #d8d8d8; */
+	font-size: 14px;
+	/* border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd; */
+}
+.scroll-table tbody td {
+	text-align: left;
+	/* border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd; */
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+	/* border: 1px solid; */
+	/* table-layout:fixed; */
+  	width:100%;
+	word-wrap: break-word
+}
+.scroll-table tbody tr{
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+ 
+/* Стили для скролла */
+::-webkit-scrollbar {
+	width: 6px;
+} 
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+@media (max-width: 1300px) {
+	.container-1 {
+	  /* overflow-y: scroll; */
+	  width: 90%;
+	  margin:5% 0 0 5%;
+	}
+
+	.container-2 {
+		/* overflow-y: scroll; */
+		width: 90%;
+	  	margin:50% 0 0 5%;
+	  }
+
+	.container-3 {
+		/* overflow-y: scroll; */
+		width: 90%;
+		margin:95% 0 0 5%;
+	}
+
+	.scroll-table-body {
+		height: 200px;
+		/* width: 600px; */
+		overflow-x: auto;
+		margin-top: 0px;
+		margin-bottom: 5px;
+	}
+
+	.scroll-table table {
+		width:100%;
+		/* table-layout: fixed;
+		border: none;
+	} */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container-2 {
+   overflow-x:auto;
+	position: absolute;
+	top: 75%;
+	left: 75%;
+	transform: translate(-45%, -45%);
+   background: linear-gradient(45deg, #49a09d, #cb92f1);
+   border-radius: 10px;
+}
+
+.container-3 {
+   overflow-x:auto;
+	position: absolute;
+	top: 75%;
+	left: 40%;
+	transform: translate(-90%, -45%);
+   background: linear-gradient(45deg, #49a09d, #5f2c82);
+   border-radius: 10px;
+}
+
+table {
+	width: 600px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+   border-radius: 10px;
+}
+.scroll-table{
+	/* height: 300px; */
+	/* overflow-x: auto; */
+	/* margin-top: 0px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(56, 29, 29, 0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead th {
+		background-color: #55608f;
+}
+
+tbody tr :hover{
+   background-color: rgba(255,255,255,0.3);
+}
+
+tbody td {
+   position: relative;
+}
+
+tbody td:hover::before{
+   content: "";
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: -9999px;
+   bottom: -9999px;
+   background-color: rgba(255,255,255,0.2);
+   z-index: -1;
+} */ 
+
+
+
+

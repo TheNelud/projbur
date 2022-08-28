@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.maintenance, name = "maintenance"),
+    # path('', views.pdf, name='pdf'),
     
 ]
