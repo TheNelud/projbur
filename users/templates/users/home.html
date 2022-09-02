@@ -10,9 +10,11 @@
       <p> Добро пожаловать на проект по бурению</p>
         {% if user.is_authenticated %}
           <div class="main-form">
-            <a href="{% url 'logout' %}">Выйти</a>
-            <br>
+
             <a href="{%url 'maintenance'%}">На главную страницу</a>
+            <br>
+            <a href="{% url 'logout' %}">Выйти</a>
+            
           </div>
         {% else %}
           <div class="main-form">

@@ -5,172 +5,197 @@
         <meta charset="utf-8">
         <title>Техническое обслуживание</title>
         <link rel="stylesheet" href="{% static 'maintenance_app/css/maintenance.css'  %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'maintenance_app/css/menu.css'  %}" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
     </head>
     <body>
-        <h1>Личный кабинет {{ user.username|default:'гость' }}</h1>
-        <div class='container-1'>
-            <div class="scroll-table">
-                <table>
-                    <caption> Техническое обслуживание </caption>
-                    <thead>
-                        <tr>
-                            <th> №</th>
-                            <th> Номер ТО</th>
-                            <th> Вид работ</th>
-                            <th> Дата</th>
-                        </tr>
-                    </thead>
-                </table>
-                    
-                <div class="scroll-table-body">
+        <div class="sidebar"> <!--Можно будет убрать close и допменю будет в баре -->
+            <div class="logo-details">
+                <i class='bx bxs-hot'></i>
+                <span class="logo_name">Кабинет</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="link_name">Приборная панель</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Приборная панель</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-collection'></i>
+                            <span class="link_name">Категории</span>
+                        </a>
+                        <i class='bx bxs-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Обьекты</a></li>
+                        <li><a href="#">Буровая-1</a></li>
+                        <li><a href="#">Буровая-2</a></li>
+                        <li><a href="#">Буровая-3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-history' ></i>
+                        <span class="link_name">История</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">История</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-cog' ></i>
+                        <span class="link_name">Настройки</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Настройки</a></li>
+                    </ul>
+                </li>
+                <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <box-icon name='user'></box-icon>
+                    {% comment %} <img src="image/profile.jpg" alt="profile" > {% endcomment %}
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">{{ user.username|default:'гость' }}</div>
+                    {% comment %} <div class="job">Инженер-клац</div> {% endcomment %}
+                </div>
+                <a href="{% url 'logout' %}"><i class='bx bx-log-out' ></i></a>
+            </div>
+            </li>
+            </ul>
+        </div>
+     
+        <section class="home-section">
+            
+            <div class="home-content">
+                <i class='bx bx-menu'></i>
+                <span class="text">Личный кабинет {{ user.username|default:'гость' }}</span>
+            </div>
+
+            
+            <div class='container-1'>
+                <div class="scroll-table">
                     <table>
-                        <tbody>
-                            {% for item in to_services%}
+                        <caption> Техническое обслуживание </caption>
+                        <thead>
                             <tr>
-                                <td >{{ item.ser_id }}</td>
-                                <td >{{ item.number_to }}</td>
-                                <td >{{ item.type_work }}</td>
-                                <td >{{ item.datetime }}</td>
+                                <th> №</th>
+                                <th> Номер ТО</th>
+                                <th> Вид работ</th>
+                                <th> Дата</th>
                             </tr>
-                            {% endfor %}
-                        </tbody>
+                        </thead>
                     </table>
-                </div>	
+                        
+                    <div class="scroll-table-body">
+                        <table>
+                            <tbody>
+                                {% for item in to_services%}
+                                <tr>
+                                    <td >{{ item.ser_id }}</td>
+                                    <td >{{ item.number_to }}</td>
+                                    <td >{{ item.type_work }}</td>
+                                    <td >{{ item.datetime }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>	
+                </div>
             </div>
-        </div>
-
-        <div class='container-2'>
-            <div class="scroll-table">
-                <table>
-                    <caption> Перечень МТР </caption>
-                    <thead>
-                        <tr>
-                            <th> №</th>
-                            <th> Наименование МТР</th>
-                            <th> Кол-во</th>
-                        </tr>
-                    </thead>
-                </table>
-                    
-                <div class="scroll-table-body">
+    
+            <div class='container-2'>
+                <div class="scroll-table">
                     <table>
-                        <tbody>
-                            {% for item in to_repairs%}
+                        <caption> Перечень МТР </caption>
+                        <thead>
                             <tr>
-                                <td >{{ item.rep_id }}</td>
-                                <td >{{ item.name_mtr }}</td>
-                                <td >{{ item.quantity }}</td>
+                                <th> №</th>
+                                <th> Наименование МТР</th>
+                                <th> Кол-во</th>
                             </tr>
-                            {% endfor %}
-                        </tbody>
+                        </thead>
                     </table>
-                </div>	
+                        
+                    <div class="scroll-table-body">
+                        <table>
+                            <tbody>
+                                {% for item in to_repairs%}
+                                <tr>
+                                    <td >{{ item.rep_id }}</td>
+                                    <td >{{ item.name_mtr }}</td>
+                                    <td >{{ item.quantity }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>	
+                </div>
             </div>
-        </div>
-
-        <div class='container-3'>
-            <div class="scroll-table">
-                <table>
-                    <caption> График ремонта </caption>
-                    <thead>
-                        <tr>
-                            <th> №</th>
-                            <th> Система</th>
-                            <th> Кол-во</th>
-                            <th> Дата ремонта</th>
-                        </tr>
-                    </thead>
-                </table>
-                    
-                <div class="scroll-table-body">
+    
+            <div class='container-3'>
+                <div class="scroll-table">
                     <table>
-                        <tbody>
-                            {% for item in to_shedule%}
+                        <caption> График ремонта </caption>
+                        <thead>
                             <tr>
-                                <td>{{ item.shed_id }}</td>
-                                <td>{{ item.system }}</td>
-                                <td>{{ item.quantity }}</td>
-                                <td>{{ item.datetime }}</td>
+                                <th> №</th>
+                                <th> Система</th>
+                                <th> Кол-во</th>
+                                <th> Дата ремонта</th>
                             </tr>
-                            {% endfor %}
-                        </tbody>
+                        </thead>
                     </table>
-                </div>	
+                        
+                    <div class="scroll-table-body">
+                        <table>
+                            <tbody>
+                                {% for item in to_shedule%}
+                                <tr>
+                                    <td>{{ item.shed_id }}</td>
+                                    <td>{{ item.system }}</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>{{ item.datetime }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>	
+                </div>
             </div>
-        </div>
-
-        {% comment %} <div class = "scroll-table">
-            <table>
-                <caption> Техническое обслуживание </caption>
-                <thead>
-                    <tr>
-                        <th> №</th>
-                        <th> Номер ТО</th>
-                        <th> Вид работ</th>
-                        <th> Дата</th>
-                    </tr>
-                </thead>
-            </table>
-           
-            <div class='scroll-table-body'>
-                <table>
-                    <tbody>
-                        <tr>
-                             {% for item in to_services%}
-                            <td >{{ item.ser_id }}</td>
-                            <td >{{ item.number_to }}</td>
-                            <td >{{ item.type_work }}</td>
-                            <td >{{ item.datetime }}</td>
-                            {% endfor %}
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> {% endcomment %}
-
-        {% comment %} <div class = "container-2">
-            <table class="repair-table" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <caption> Перечень МТР </caption>
-                <tbody>
-                    <tr>
-                        <th> №</th>
-                        <th> Наименование МТР</th>
-                        <th> Кол-во</th>
-                    </tr>
-            {% for item in to_repairs%}
-                    <tr>
-                        <td width="200">{{ item.rep_id }}</td>
-                        <td width="200">{{ item.name_mtr }}</td>
-                        <td width="200">{{ item.quantity }}</td>
-                    </tr>
-            {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <div class = "container-3">
-            <table class="repair-table" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <caption> График ремонта </caption>
-                <tbody>
-                    <tr>
-                        <th> №</th>
-                        <th> Система</th>
-                        <th> Кол-во</th>
-                        <th> Дата ремонта</th>
-                    </tr>
-            {% for item in to_shedule%}
-                    <tr>
-                        <td width="200">{{ item.shed_id }}</td>
-                        <td width="200">{{ item.system }}</td>
-                        <td width="200">{{ item.quantity }}</td>
-                        <td width="200">{{ item.datetime }}</td>
-                    </tr>
-            {% endfor %}
-                </tbody>
-            </table>
-        </div> {% endcomment %}
 
 
-        {% comment %} <iframe src="/pdf.js/web/viewer.html?file=/static/keys.pdf"
-  width="80%" height="720" >не удалось показать документ</iframe> {% endcomment %}
+        </section>
+
+        <script>
+            let arrow = document.querySelectorAll(".arrow");
+            
+            for(var i=0; i<arrow.length; i++){
+                arrow[i].addEventListener("click", (e)=>{
+                    let arrowParent = e.target.parentElement.parentElement;
+                    console.log(arrowParent);
+                    arrowParent.classList.toggle("showMenu");
+                });
+            }
+    
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".bx-menu");
+    
+            sidebarBtn.addEventListener("click",()=>{
+                sidebar.classList.toggle("close");
+            });
+    
+        </script>
+
+        
     </body>
 </html>

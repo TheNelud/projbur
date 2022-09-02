@@ -3,7 +3,7 @@ body {
 	height: 100%;
 } */
 
-body {
+/* body {
 	margin: 0;
 	font-family: sans-serif;
 	font-weight: 100;
@@ -13,21 +13,23 @@ body {
     background-attachment: fixed;
     font-family: sans-serif;
 	
-} 
+}  */
 
-body h1{
+/* body h1{
     margin: 30px 100px;
     padding: 0;
     text-align: center;
     color: #fff;
     font-size: 30px;
     text-transform: uppercase;
-} 
+}  */
 
 .container-1 {
 	position: absolute;
 	width: 600px;
-   	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	/*  linear-gradient(45deg, #49a09d, #1d55a8); */
+	background: #1d1d31;
+	color: white;
    	border-radius: 10px;
 	margin:1% 0 0 5%;
 }
@@ -35,17 +37,21 @@ body h1{
 .container-2 {
 	position: absolute;
 	width: 600px;
-   	background: linear-gradient(45deg, #49a09d, #5f2c82);
+   	/* background: linear-gradient(45deg, #49a09d, #5f2c82); */
+	background: #1d1d31;
+	color: white;
    	border-radius: 10px;
-	margin:30% 0 0 5%;
+	margin:25% 0 0 5%;
 }
 
 .container-3 {
 	position: absolute;
 	width: 600px;
-   	background: linear-gradient(45deg, #49a09d, #5f2c82);
+   	/* background: linear-gradient(45deg, #49a09d, #5f2c82); */
+	background: #1d1d31;
+	color: white;
    	border-radius: 10px;
-	margin:30% 0 0 55%;
+	margin:25% 0 0 50%;
 }
 
 
@@ -85,7 +91,9 @@ body h1{
 	word-wrap: break-word
 }
 .scroll-table tbody tr{
-	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	background: linear-gradient(45deg, #49a09d, #311238);
+
+	/* background: linear-gradient(45deg, #4e4e4e, #343136); */
 }
  
 /* Стили для скролла */
